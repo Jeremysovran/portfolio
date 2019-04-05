@@ -1,0 +1,25 @@
+#blogWrap{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 68em;
+    h1{
+        text-align: center;
+        margin: 0;
+        margin-top: 2em;
+        font-size: 2em;
+        font-family: "Montserrat",sans-serif;
+    }
+    p{
+        text-align: center;
+        color: #b3b3b3;
+    }
+    .content{
+        p{
+            text-align: left;
+            color:#000;
+            font-size: 1.1em;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+    }
+}

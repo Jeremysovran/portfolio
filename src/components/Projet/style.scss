@@ -1,0 +1,91 @@
+#projectPart{
+    background: #f5f5f5;
+    padding-bottom: 5em;
+    h2{
+        text-align:center;
+        text-transform: uppercase;
+        font-family: "Montserrat",sans-serif;
+        font-weight: 400;
+        padding: 1em 0 0;
+    }
+    a{
+        cursor: pointer;
+    }
+    hr {
+        width: 4em;
+        background: #3B80FF;
+        height: 3px;
+        margin: 1.8em 0;
+        align-self: center;
+    }
+    .borderRight{
+        border-right: 1px solid #e2e2e2!important;
+    }
+    .borderBottom{
+        border-bottom: 1px solid #e2e2e2!important;
+    }
+    .projectIntro{
+        display: flex;
+        flex-direction: column;
+        #projectDescription{
+            text-align: center;
+            margin-bottom: 3em;
+            padding: 1em;
+        }
+    }
+    .projectBloc{
+        position: relative;
+        background: #fff;
+        display: block;
+        text-decoration: none;
+        box-shadow: none;
+        padding: 1.25em;
+        transition: all .3s ease-in-out;
+        border:1px solid #e2e2e2;
+        border-bottom:none;
+        height: 100%;
+        color:#000;
+        &:hover{
+            color:#3B80FF;
+        }
+        .projectBlockTitle{
+            display: flex;
+            align-items: center;
+            .projectIcon{
+                font-size: 0.9em;
+            }
+        }
+        .projectTitle{
+            font-family: "Montserrat",sans-serif;
+            font-size: 1em;
+            margin-left: 0.8em;
+            color:#000;
+            line-height: 2.5em;
+        }
+        .projectText{
+            color:#b3b3b3;
+            font-style: italic;
+        }
+        &:nth-child(odd){
+            border-right:none;
+         }
+        
+        &:hover{
+            z-index: 10;
+            border-color: transparent !important;
+            box-shadow: inset 0 0 0 1px #b3b3b3;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.26), 0px 7px 28px 0px rgba(0, 0, 0, 0.25);
+            transform: scaleX(1.02);
+        }
+    }
+    .noPadding{
+        padding: 0!important;
+    }
+    .projectWrap{
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 68em;
+        border-bottom:1px solid #e2e2e2;
+        border-right:1px solid #e2e2e2;
+    }
+}

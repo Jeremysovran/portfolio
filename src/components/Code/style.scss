@@ -1,0 +1,54 @@
+#codePart{
+background-color: #f5f5f5;
+    #wrapperCode{
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 65em;
+        background: #fff;
+        padding: 3em 5em 1em;
+        transform: translateY(-50px);
+        -webkit-transform: translateY(-50px);
+        display: flex;
+        flex-direction: column;
+        h2{
+            text-transform: uppercase;
+            font-family: "Montserrat",sans-serif;
+            font-weight: 400;
+            text-align: center;
+        }
+        hr {
+            width: 4em;
+            background: #3B80FF;
+            height: 3px;
+            margin: 1.8em 0;
+            align-self: center;
+        }
+        .boxCode{
+            margin-top:2em;
+            span{
+                text-transform: uppercase;
+                font-family: "Montserrat",sans-serif;
+                font-weight: 400;
+                font-size: 1.3em;
+                margin-bottom: 1em;
+                display: inline-block;
+            }
+            ul{
+                display: flex;
+                flex-wrap:wrap;
+                list-style-type: none;
+                margin:0;
+                li{
+                    padding: 0.5em 1.2em;
+                    background: #f5f5f5;
+                    border-radius: 20px;
+                    margin: 0.5em 0.2em;
+                    color:#b3b3b3;
+                    font-style: italic;
+                    font-family: "Roboto",sans-serif;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import Bio from "../components/Bio/"
+import Layout from "../components/Layout/"
+import SEO from "../components/Seo/"
+import './style.scss';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -18,23 +18,12 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
+        <div id="blogWrap">
         <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
+        <p>
           {post.frontmatter.date}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <div className="content" dangerouslySetInnerHTML={{ __html: post.html, }} />
         <Bio />
 
         <ul
@@ -61,6 +50,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        </div>
       </Layout>
     )
   }
@@ -82,8 +72,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM DD, YYYY", locale: "fr")
         description
+        
       }
     }
   }

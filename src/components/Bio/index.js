@@ -9,10 +9,9 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from "../../utils/typography"
 
-function Bio() {
-  return (
+const Bio= () => (
     <StaticQuery
       query={bioQuery}
       render={data => {
@@ -22,6 +21,7 @@ function Bio() {
             style={{
               display: `flex`,
               marginBottom: rhythm(2.5),
+              marginTop: rhythm(2.5),
             }}
           >
             <Image
@@ -37,20 +37,19 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
+            <p 
+            style={{
+              textAlign:`left`,
+            }}>
+              Blog personnel de <a href={`https://twitter.com/${social.twitter}`}>{author}</a>
+              {` `} <br></br>
+              partage ses découvertes sur l'écosystème React.
             </p>
           </div>
         )
       }}
     />
-  )
-}
+  );
 
 const bioQuery = graphql`
   query BioQuery {
@@ -72,4 +71,4 @@ const bioQuery = graphql`
   }
 `
 
-export default Bio
+export default Bio;

@@ -1,0 +1,80 @@
+#test{
+    background: #161616;
+    position: relative;
+}
+
+#banner{
+    padding-top: 8em;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 65em;
+    .imageBanner{
+        margin-left: 5em;
+        margin-top: -4em;
+    }
+}
+#banner-content{
+    background-color: #161616;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 1em;
+    padding-bottom: 15em;
+    p {
+        color: #3B80FF;
+        font-size: 3em;
+        font-family: "Playfair Display";
+        margin-bottom: 0;
+
+        span{
+            color:#fff;
+            font-size: 2.5em;
+            display: block;
+            line-height: 0.8;
+        }
+    }
+    h2 {
+        color:#3B80FF;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 1.35em;
+        margin-top:1.5em;
+    }
+    hr {
+        width: 4em;
+        background: #fff;
+        height: 3px;
+        margin: 1.8em 0
+    }
+    #description{
+        color:#fff;
+        margin-bottom: 2em;
+    }
+    .buttonLeft, .buttonRight{
+        border-radius:25px;
+        padding: 0.8em 2.8em;
+        text-transform: uppercase;
+        span{
+            color:#fff;
+        }
+    }
+    .buttonLeft{
+        background: #3B80FF;
+        border:none;
+        margin-right: 1em;
+        &:hover span{
+            color:#000;
+        }
+        &:hover{
+            background: #fff;  
+        }
+    }
+    .buttonRight{
+        background: #000;
+        border: solid 2px #3B80FF;
+        &:hover{
+            border: solid 2px #fff;
+        }
+    }
+}
+

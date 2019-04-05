@@ -1,16 +1,25 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Img from 'gatsby-image'
+import { FaPoo } from "react-icons/fa"
+import 'semantic-ui-css/semantic.min.css'
+import {
+  Grid
+} from 'semantic-ui-react';
+import BannerHome from "../components/BannerHome"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
+import Code from "../components/Code"
+import Projet from "../components/Projet"
+import Contact from "../components/Contact"
+import './style.scss';
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
+    console.log(data);
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -18,19 +27,24 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
+        <BannerHome />
+        <Code />
+        <Projet />
+        <div id="blog">
+        <h2>Mes posts</h2>
+        <hr/>
+        </div>
+        <Grid relaxed stackable id="blogPosts">
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+            <Grid.Column mobile={16} tablet={8} computer={8} key={node.fields.slug} >
+            <div className="blogPost">
+                <Link to={node.fields.slug}>
+            <Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
+            <div className="blogText">
+              <h3>
                   {title}
-                </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
               <p
@@ -38,9 +52,14 @@ class BlogIndex extends React.Component {
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
-            </div>
+              </div>
+                </Link>
+                </div>
+            </Grid.Column>
           )
         })}
+        </Grid>
+        <Contact />
       </Layout>
     )
   }
@@ -58,14 +77,22 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
+          id
+          excerpt(pruneLength: 150)
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM DD", locale: "fr")
             title
             description
+            featuredImage {
+              childImageSharp{
+                  sizes(maxWidth: 630) {
+                      ...GatsbyImageSharpSizes
+                  }
+              }
+          }
           }
         }
       }

@@ -1,14 +1,42 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
+    title: `Reactivity`,
+    author: `Jérémy Sovran`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://reactivity.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `jeremysov`,
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Playfair Display`,
+            subsets: [`latin`],
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Montserrat`,
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Roboto`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    },
+      {
+    resolve: `gatsby-plugin-sass`,
+    options: {
+      cssLoaderOptions: {
+        camelCase: false,
+      },
+    },
+  },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,7 +58,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
             },
           },
           {
